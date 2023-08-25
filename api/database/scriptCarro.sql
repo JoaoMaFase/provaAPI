@@ -1,8 +1,22 @@
--- clientes 
---
---
---
---
+-- veiculos
+
+-- tabela tipo_veiculo
+create table tb_tipo_veiculo{
+       id_tipocarro  int primary key auto-increement,
+       tp_veiculo    varchar(100)
+}
+
+-- tabela veiculos
+create table tb_veiculo{
+       id_veiculo    int primary key auto_increment,
+       id_tipocarro  int,
+       nm_modelo     varchar(200),
+       ds_marca      varchar(100),
+       nr_ano        int,
+       ds_placa      varchar(10)
+       foreign key id_tipocarro references tb_tipo_veiculo(id_tipocarro)
+}
+
 -- ENDPOINT::post - inserir cliente
 insert into tb_cliente(nm_cliente, ds_email, ds_telefone, ds_cpf, ds_cnh)
 				values(? , ? , ? , ? ,?);
