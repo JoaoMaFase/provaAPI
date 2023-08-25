@@ -1,3 +1,4 @@
+import { query } from "express"
 import { con } from "./connection.js"
 
 export async function InserirVeiculo(veiculo){
@@ -35,8 +36,22 @@ export async function ListarVeiculosPorMMP(mmp){
 
 export async function AlterarVeiculo(id,veiculo){
     const comando = `
-        insert into tb_veiculo(id_tipocarro, ds_modelo, ds_marca, nr_ano, ds_placa) 
-            values(?, ? , ?, ? , ?);
+        update tb_veiculo as v
+        inner join tb_tipo_veiculo as t on t.id_tipocarro = v.id_tipocarro
+                set v.nm_modelo = ? ,
+                v.ds_marca = ? ,
+                v.nr_ano = ?,
+                t.tp_veiculo = ?
+                where v.id_veiculo = ?
     `
+    const [resposta] = await con.query(comando, [
+        veiculo.tipo, 
+        veiculo.modelo,
+        veiculo.marca,
+        veiculo.ano,
+        veiculo.placa,
+        id
+    ])
+
 
 }
