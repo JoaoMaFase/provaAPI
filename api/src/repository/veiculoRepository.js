@@ -32,3 +32,11 @@ export async function ListarVeiculosPorMMP(mmp){
     const [resposta] = await con.query( comando, [`%${mmp}%`,`%${mmp}%`,`%${mmp}%`])
     return resposta  
 }
+
+export async function AlterarVeiculo(id,veiculo){
+    const comando = `
+        insert into tb_veiculo(id_tipocarro, ds_modelo, ds_marca, nr_ano, ds_placa) 
+            values(?, ? , ?, ? , ?);
+    `
+
+}
