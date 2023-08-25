@@ -1,4 +1,3 @@
-import { query } from "express"
 import { con } from "./connection.js"
 
 export async function InserirVeiculo(veiculo){
