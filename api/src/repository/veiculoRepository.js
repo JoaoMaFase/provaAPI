@@ -32,5 +32,3 @@ export async function ListarVeiculosPorMMP(mmp){
     const [resposta] = await con.query( comando, [`%${mmp}%`,`%${mmp}%`,`%${mmp}%`])
     return resposta  
 }
-
-export defaultP
