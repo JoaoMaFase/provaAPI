@@ -52,6 +52,16 @@ export async function AlterarVeiculo(id,veiculo){
         veiculo.placa,
         id
     ])
+    return resposta.affectedRows
 
+}
 
+export async function DeletarVeiculo(id){
+    const comando = `
+        delete from tb_veiculo
+        where id_veiculo = ?
+    `
+
+    const [resposta] = await con.query(comando, [id])
+    return resposta.affectedRows
 }
