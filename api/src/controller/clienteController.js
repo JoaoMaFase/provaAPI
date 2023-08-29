@@ -41,6 +41,7 @@ server.put('/cliente/:id', async (req, resp) => {
         const {id} = req.params
 
         const clienteAlterado = req.body
+        
 
         const resposta = await AlterarCliente(id, clienteAlterado)
 

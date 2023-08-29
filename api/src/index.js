@@ -1,6 +1,7 @@
 
 import 'dotenv/config'
 import clienteController from './controller/clienteController.js'
+import veiculoController from './controller/veiculoController.js'
 import cors from 'cors'
 import express from 'express'
 
@@ -8,10 +9,9 @@ import express from 'express'
 const server = express()
 
 server.use(cors())
-
 server.use(express.json())
-
 server.use(clienteController)
+server.use(veiculoController)
 
 
 
