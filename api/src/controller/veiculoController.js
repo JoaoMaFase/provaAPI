@@ -61,4 +61,5 @@ server.delete('/veiculo/:id', async (req, resp) => {
         })
     }
 })
+ok
 export default server
