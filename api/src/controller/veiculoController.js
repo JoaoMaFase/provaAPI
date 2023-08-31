@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { AlterarVeiculo, DeletarVeiculo, InserirVeiculo, ListarVeiculosPorMMP } from '../repository/veiculoRepository.js'
+import { AlterarVeiculo, DeletarVeiculo, InserirVeiculo, ListarVeiculos, ListarVeiculosPorMMP } from '../repository/veiculoRepository.js'
 
 
 const server = Router()
@@ -23,6 +23,17 @@ server.get('/veiculo/busca', async (req, resp) => {
         const dados = req.query.mmp
         const resposta = await ListarVeiculosPorMMP(dados)
         resp.status(200).send(resposta)
+        
+    } catch (err){
+        resp.status(404).send({
+            erro: err.message
+        })
+    }
+})
+server.get('/veiculo/todos', async (req, resp) => {
+    try {
+        const resposta = await ListarVeiculos()
+        resp.send(resposta)
         
     } catch (err){
         resp.status(404).send({

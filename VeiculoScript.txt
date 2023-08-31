@@ -7,7 +7,7 @@ localhost:5000/veiculo
         "modelo": "",
         "marca": "",
         "ano": "",
-        "placa
+        "placa": ""
 }
 
 //buscar veiculo por modelo, marca ou placa GET
