@@ -14,7 +14,7 @@ create table tb_veiculo(
        ds_marca      varchar(100),
        nr_ano        int,
        ds_placa      varchar(10),
-       foreign key (id_tipocarro) references tb_tipo_veiculo(id_tipocarro)
+       foreign key   (id_tipocarro) references tb_tipo_veiculo(id_tipocarro)
 );
 
 -- ENDPOINT::post - inserir cliente
@@ -23,12 +23,12 @@ insert into tb_cliente(nm_cliente, ds_email, ds_telefone, ds_cpf, ds_cnh)
                 
 -- ENDPOINT::put - alterar cliente
 update tb_cliente
-            set nm_cliente = ? ,
-            ds_email = ? ,
-            ds_telefone = ?,
-            ds_cpf = ?,
-            ds_cnh = ?
-            where id_cliente = ?;
+       set    nm_cliente = ? ,
+              ds_email = ? ,
+              ds_telefone = ?,
+              ds_cpf = ?,
+              ds_cnh = ?
+       where  id_cliente = ?;
         
         
 -- ENDPOINT::get -- consultar cliente por nome

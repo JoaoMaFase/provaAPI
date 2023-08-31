@@ -1,0 +1,34 @@
+--veiculo
+
+//inserir veiculo   POST
+localhost:5000/veiculo
+{
+        "tipo": "", (id_tipo_carro)
+        "modelo": "",
+        "marca": "",
+        "ano": "",
+        "placa
+}
+
+//buscar veiculo por modelo, marca ou placa GET
+localhost:5000/veiculo/busca?mmp=exemplo
+
+//alterar veiculo por id    PUT
+localhost:5000/veiculo/1
+{
+        "tipo": "", (id_tipo_carro)
+        "modelo": "",
+        "marca": "",
+        "ano": "",
+        "placa
+}
+
+//Deletar veiculo por id    DELETE
+localhost:5000/veiculo/1
+{
+        "tipo": "", (id_tipo_carro)
+        "modelo": "",
+        "marca": "",
+        "ano": "",
+        "placa
+}

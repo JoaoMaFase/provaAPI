@@ -1,0 +1,28 @@
+--cliente
+
+//inserir cliente
+localhost:5000/cliente  POST
+{
+    "nome": "", 
+    "email": "", 
+    "telefone": "", 
+    "cpf": "", 
+    "cnh": ""
+}
+
+//buscar cliente por nome   GET
+localhost:5000/cliente/busca?nome=exemplo
+
+//alterar cliente   PUT
+localhost:5000/cliente/1
+{
+    "nome": "", 
+    "email": "", 
+    "telefone": "", 
+    "cpf": "", 
+    "cnh": ""
+}
+
+
+//deletar cliente   DELETE
+localhost:5000/cliente/1
