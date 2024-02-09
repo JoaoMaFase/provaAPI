@@ -40,6 +40,7 @@ export async function ListarClientes(){
         ds_cpf as cpf,
         ds_cnh as cnh
         from tb_cliente
+        order by nm_cliente asc
     `
     const [resposta] = await con.query(comando)
     return resposta  

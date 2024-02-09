@@ -1,5 +1,3 @@
-create database prova;
-use prova;
 
 create table tb_cliente(
 	id_cliente   	int primary key auto_increment,
