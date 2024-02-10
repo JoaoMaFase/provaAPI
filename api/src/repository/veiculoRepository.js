@@ -47,6 +47,15 @@ export async function ListarVeiculos(){
     return resposta  
 }
 
+export async function ListarTipoVeiculos(){
+    const comando = `
+        select tp_veiculo 
+        from tb_tipo_veiculo
+    `
+    const [resposta] = await con.query(comando)
+    return resposta  
+}
+
 export async function AlterarVeiculo(id,veiculo){
     const comando = `
         UPDATE  tb_veiculo 
